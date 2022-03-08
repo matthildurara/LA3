@@ -6,8 +6,16 @@ import {BrowserRouter as Router, Routes, Route,Link, } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import {getBubblesService} from './services/bubbleService';
 
+
 function App() {
+  //  const dispatch = useDispatch();
+  // const [bubbles, setBubbles] = useState({});
   // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   // setBubbles(await getBubbles());
+  //    dispatch(getBubbles());
+  // },[dispatch]);
 
   return (
     <Router>
