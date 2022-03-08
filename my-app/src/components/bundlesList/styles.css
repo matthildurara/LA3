@@ -1,0 +1,5 @@
+.bundles-list {
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    row-gap: 15px;
+}
