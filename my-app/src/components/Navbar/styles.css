@@ -1,0 +1,33 @@
+.nav-links {
+  background-color: #333;
+  border-bottom: 20px solid rgb(160, 208, 223);
+}
+
+.nav-links img {
+  width: 400px;
+}
+
+.nav-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+  }
+  
+.nav-links  li {
+    float: left;
+  }
+  
+.nav-links  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+.nav-links  li a:hover {
+    background-color: #111;
+  }
