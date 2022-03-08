@@ -1,23 +1,24 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import styles from './styles.css';
 
 const Navbar = () => {
     return (
         <>
-        <div className='nav-links'>
+        <div className='nav-links' style={styles}>
+        <img src="img/bubbleLogo.jpg" alt="BubblyLogo"></img>
         <ul >
             <li >
                 <Link to="/">Products</Link>
             </li>
             <li  >
-                Bundles
+                <Link to="/">Bundles</Link>
             </li>
             <li  >
-                About us
+                <Link to="/">About us</Link>
             </li>
             <li  >
-                Cart
+                <Link to="/">Cart</Link>
             </li>
         </ul>
         </div>
