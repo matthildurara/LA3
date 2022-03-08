@@ -1,0 +1,6 @@
+.home-bubbles {
+    display: grid;
+    grid-template-rows: 30% 30% 30%;
+    
+
+}

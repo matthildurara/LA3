@@ -17,12 +17,12 @@ const Home = () => {
     console.log(bubbles);
 
     return (
-        <div className="Home">
-            <h1>Bubblify</h1>
-            <div>
+        <div >
+            <h1>Bubbles</h1>
+            <div className="home-bubbles">
                 {Object.values(bubbles).map(item => ( 
                     <div key={item.id}>
-                        {item.name}
+                        <BubbleView item={item} />
                         </div>))}
             </div>
         </div>
