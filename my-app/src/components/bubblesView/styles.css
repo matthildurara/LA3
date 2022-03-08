@@ -3,7 +3,13 @@
     padding: 30px;
     text-align: center;
     width: 250px;
+    align-items: center;
+    justify-content: center;
     /* display: flex;
     align-items: center;
     justify-content: center; */
+}
+.bubble-img{
+    width: 140px;
+    height: 140px;
 }
