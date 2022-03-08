@@ -9,6 +9,9 @@
     align-items: center;
     justify-content: center; */
 }
+.bubble-view.hover{
+    border: 5px solid black;
+}
 .bubble-img{
     width: 140px;
     height: 140px;

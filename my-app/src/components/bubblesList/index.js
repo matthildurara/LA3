@@ -3,12 +3,11 @@ import { useSelector} from 'react-redux';
 import BubbleView from '../bubblesView'
 import { getBubblesService } from '../../services/bubbleService';
 import styles from './styles.css';
-import { Link } from 'react-router-dom';
 
 
 
 
-const Home = () => {
+const BubblesList = () => {
     const [bubbles,setBubbles] = useState({});
     useEffect(() => {
         (async () => {
@@ -20,13 +19,15 @@ const Home = () => {
 
     return (
         <div >
-            <h1>Welcome to Bubblify</h1>
-            <Link to={"/bubbles"}>
-                <h2 className='bubbles' style={styles}>Bubbles</h2>
-            </Link>
-
+            <h1>Bubbles</h1>
+            <div className="home-bubbles" style={styles}>
+                {Object.values(bubbles).map(item => ( 
+                     
+                        <BubbleView key={item.id} item={item} />
+                        ))}
+            </div>
         </div>
     )
 }
 
-export default Home;
+export default BubblesList;
