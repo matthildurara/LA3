@@ -10,7 +10,7 @@ const Navbar = () => {
         <img src={logo} alt="BubblyLogo"></img>
         <ul >
             <li >
-                <Link to="/">Products</Link>
+                <Link to="/bubbles">Products</Link>
             </li>
             <li  >
                 <Link to="/bundles">Bundles</Link>

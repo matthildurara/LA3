@@ -19,10 +19,10 @@ const Home = () => {
     console.log(bubbles);
 
     return (
-        <div >
+        <div className='container' style={styles}>
             <h1>Welcome to Bubblify</h1>
-            <Link to={"/bubbles"}>
-                <h2 className='bubbles' style={styles}>Bubbles</h2>
+            <Link to={"/bubbles"} style={{ textDecoration: 'none'}}>
+                <div className='btn bubbles' style={styles}>Bubbles</div>
             </Link>
 
         </div>

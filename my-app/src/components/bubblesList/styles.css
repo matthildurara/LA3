@@ -1,7 +1,21 @@
 .home-bubbles {
     display: grid;
-    grid-template-columns: auto auto auto ;
+    grid-template-columns: 33% 33% 33%;
     row-gap: 15px;
+
+    justify-items: center;
     
+
+}
+.bubble-title{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+.container{
+    /* display: flex; */
+    /* grid-template-rows: 10% auto; */
 
 }

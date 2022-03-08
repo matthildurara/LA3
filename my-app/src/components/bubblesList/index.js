@@ -15,11 +15,11 @@ const BubblesList = () => {
         })();
     },[]);
 
-    console.log(bubbles);
+
 
     return (
-        <div >
-            <h1>Bubbles</h1>
+        <div className='container' style={styles}>
+            <h1 className='bubble-title' style={styles}>Bubbles</h1>
             <div className="home-bubbles" style={styles}>
                 {Object.values(bubbles).map(item => ( 
                      
