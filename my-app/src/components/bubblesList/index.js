@@ -14,6 +14,7 @@ const BubblesList = () => {
             setBubbles( await getBubblesService());
         })();
     },[]);
+    console.log('Item in bubbles',bubbles);
 
     return (
         <div className='container' style={styles}>

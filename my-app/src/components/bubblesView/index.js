@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { addToCart } from '../../services/cartService';
 
 const BubbleView = ({item}) => {
+    console.log('bubble Item: ', item);
     return (
         <div className='container-bubble'>
         <Link to={"/bubbles/" + item.id}  style={{ textDecoration: 'none'}}>
