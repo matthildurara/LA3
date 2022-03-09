@@ -13,9 +13,8 @@ const Cart = () => {
         <div>Your cart</div>
         <div> hello checking if cart works</div>
         <div onClick={() => clearCart() }>clear cart</div>
-             {Object.values(cart).map(item => ( 
-                     
-                 <CartView key={item.id} item={item} />
+             {Object.values(cart).map((item ,index) => ( 
+                 <CartView key={index} item={item} />
                             ))} 
         </>
     )
