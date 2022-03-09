@@ -17,13 +17,16 @@
     width: 140px;
     height: 140px;
 }
-.add-to-cart{
+.remove-cart{
     border: 2px solid #333;
-    width: 80px;
+    width: 123px;
+    padding: 4px;
+    padding-left: 7px;
+    justify-content: center;
     color: black;
     float: right;
 }
-.add-to-cart:hover{
+.remove-cart:hover{
     background-color: lightslategray;
 }
 .bubble-item{

@@ -1,4 +1,4 @@
-.add-to-cart{
+.add-cart{
     border: 2px solid #333;
     width: 80px;
     color: black;
@@ -17,7 +17,7 @@
     background-color: lightslategray;
 }
 .bubble-title{
-    font-size: 28px;
+    /* font-size: 28px; */
     padding-top: 10px;
 }
 .bubble-image{
