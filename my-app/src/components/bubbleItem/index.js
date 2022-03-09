@@ -18,11 +18,11 @@ const BubbleItem = () => {
     console.log(bubble);
     return(
         <div className="bubble-item" style={styles}>
-            <div className='bubble'>{bubble.name}</div>
-            <img className='bubbe-img' src={bubble.image} alt='bubble-img'></img>
-            <div className='bubble'>{bubble.description}</div>
-            <div className='bubble'>{bubble.price + '$'
-            }</div>
+            <div className='bubble-title' style={styles}>{bubble.name}</div>
+            <img className='bubbe-img' style={styles} src={bubble.image} alt='bubble-img'></img>
+            <div className='bubble-description'>{bubble.description}</div>
+            <div className='bubble-price'>{bubble.price + '$'}</div>
+            <div className="add-to-cart" style={styles}> Add to cart</div>
         </div>
         
         )

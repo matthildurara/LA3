@@ -1,0 +1,26 @@
+.add-to-cart{
+    border: 2px solid #333;
+    width: 80px;
+    color: black;
+    float: right;
+    padding: 20px;
+}
+.bubble-item{
+    /* display: grid;
+    grid-template-rows: auto; */
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+}
+.add-to-cart:hover{
+    background-color: lightslategray;
+}
+.bubble-title{
+    font-size: 28px;
+    padding-top: 10px;
+}
+.bubble-image{
+    width: 160px;
+    height: 160px;
+}
