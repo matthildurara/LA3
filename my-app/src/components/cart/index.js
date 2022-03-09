@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 
 const Cart = () => {
-    const [phone,setPhone] = useState('')
+    const [phone,setPhone] = useState()
     var cart = getCart();
     return(
         <>
@@ -19,7 +19,7 @@ const Cart = () => {
                  <CartView key={index} item={item} />
                             ))} 
         <div>Previous orders</div>
-        <input placeholder='Phonenumber' value={phone} onChange={(phone) => setPhone(phone)} />
+        <input type='tel' placeholder='Phonenumber' phone={phone} onChange={(phone) => setPhone(phone)} />
         <Link to={"/orders/" + phone}>
         <div className='previous'>See previous orders</div>
         </Link>
