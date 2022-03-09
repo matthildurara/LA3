@@ -22,11 +22,8 @@ const BundlesItem = ({item}) => {
                 <div className='bubble-item'>{bubble.name}</div>
 
                 <div className='bubble-item'>{bubble.price+'$'}</div>
-
-                {/* <div onClick={ () => addToCart(item) }className="add-to-cart" style={styles}> Add to cart</div> */}
         </div>
         </Link>
-        <div onClick={ () => addToCart(bubble) }className="add-to-cart" style={styles}> Add to cart</div>
         </div>
     )
 }
