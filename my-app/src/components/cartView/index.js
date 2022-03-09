@@ -11,6 +11,7 @@ const CartView = ({item}) => {
                 <img className='bubble-img' src={item.image}/>
                 <div className='bubble-item'>{item.name}</div>
                 <div className='bubble-item'>{item.price+'$'}</div>
+                <div>hello checking if cart works</div>
         </div>
         <div onClick={ () => addToCart(item) }className="remove-cart" style={styles}> Remove from cart</div>
         </div>

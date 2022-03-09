@@ -11,6 +11,7 @@ const Cart = () => {
     return(
         <>
         <div>Your cart</div>
+        <div> hello checking if cart works</div>
         <div onClick={() => clearCart() }>clear cart</div>
             {Object.values(cart).map(item => ( 
                      
