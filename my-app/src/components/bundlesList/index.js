@@ -20,6 +20,7 @@ const BundlesList = () => {
         <div >
             <h1>Bundles</h1>
             <div className="bundles-list" style={styles}>
+                
                 {Object.values(bundles).map(item => ( 
                         <BundlesView key={item.id} item={item} />
                         ))}

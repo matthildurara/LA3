@@ -1,5 +1,6 @@
 .bundles-list {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 33% 33% 33%;
     row-gap: 15px;
+    justify-items: center;
 }
