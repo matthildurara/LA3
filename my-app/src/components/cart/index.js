@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { clearCart,getCart } from '../../services/cartService';
 import CartView from '../cartView';
+import { Link } from 'react-router-dom';
 
 
 // import styles from './styles.css';
 
 
 const Cart = () => {
+    const [phone,setPhone] = useState('')
     var cart = getCart();
     return(
         <>
@@ -16,6 +18,11 @@ const Cart = () => {
              {Object.values(cart).map((item ,index) => ( 
                  <CartView key={index} item={item} />
                             ))} 
+        <div>Previous orders</div>
+        <input placeholder='Phonenumber' value={phone} onChange={(phone) => setPhone(phone)} />
+        <Link to={"/orders/" + phone}>
+        <div className='previous'>See previous orders</div>
+        </Link>
         </>
     )
 }

@@ -7,6 +7,7 @@ import BubbleItem from './components/bubbleItem';
 import BundlesList from './components/bundlesList';
 import About from './components/about';
 import Cart from './components/cart';
+import PreviousOrders from './components/previousOrders';
 import {BrowserRouter as Router, Routes, Route,Link, } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import {getBubblesService} from './services/bubbleService';
@@ -37,6 +38,7 @@ function App() {
         <Route exact path="/bundles" element={<BundlesList/>}/>
         <Route exact path="/about" element={<About/>}/>
         <Route exact path="/cart" element={<Cart/>}/>
+        <Route exact path="/orders/:telephone" element={<PreviousOrders/>}/>
 
       </Routes>
     </div>
