@@ -12,3 +12,9 @@ export const  getBubblesService = async () => {
 // export const getBubbleById = async id => {
 
 // }
+export const getBubbleById = async (id) => {
+    const result = await fetch('http://localhost:3500/api/bubbles/'+id);
+    if(!result.ok) {return {};}
+    console.log(`reslt: ${result}`);
+    return result.json();
+}

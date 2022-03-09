@@ -3,11 +3,12 @@ import { useSelector} from 'react-redux';
 import BundlesView from '../bundlesView'
 import { getBundlesService } from '../../services/bundleService';
 import styles from './styles.css';
+import BubbleView from '../bubblesView';
 
 
 
 
-const BubblesList = () => {
+const BundlesList = () => {
     const [bundles,setBundles] = useState({});
     useEffect(() => {
         (async () => {
@@ -21,7 +22,7 @@ const BubblesList = () => {
             <h1>Bundles</h1>
             <div className="bundles-list" style={styles}>
                 {Object.values(bundles).map(item => ( 
-                     
+    
                         <BundlesView key={item.id} item={item} />
                         ))}
             </div>
@@ -29,4 +30,4 @@ const BubblesList = () => {
     )
 }
 
-export default BubblesList;
+export default BundlesList;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.css';
+import PropTypes from 'prop-types';
 
 const BubbleView = ({item}) => {
     return (
@@ -17,5 +18,14 @@ const BubbleView = ({item}) => {
         </Link>
 
     )
+};
+BubbleView.propTypes = {
+    item: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    })
 };
 export default BubbleView;

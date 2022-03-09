@@ -15,8 +15,6 @@ const BubblesList = () => {
         })();
     },[]);
 
-
-
     return (
         <div className='container' style={styles}>
             <h1 className='bubble-title' style={styles}>Bubbles</h1>
