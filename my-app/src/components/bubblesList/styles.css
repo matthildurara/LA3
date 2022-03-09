@@ -17,5 +17,6 @@
 .container{
     /* display: flex; */
     /* grid-template-rows: 10% auto; */
+    padding: 10px;
 
 }

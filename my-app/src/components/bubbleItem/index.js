@@ -22,7 +22,7 @@ const BubbleItem = () => {
             <img className='bubbe-img' style={styles} src={bubble.image} alt='bubble-img'></img>
             <div className='bubble-description'>{bubble.description}</div>
             <div className='bubble-price'>{bubble.price + '$'}</div>
-            <div className="add-to-cart" style={styles}> Add to cart</div>
+            <div className="add-cart" style={styles}> Add to cart</div>
         </div>
         
         )
