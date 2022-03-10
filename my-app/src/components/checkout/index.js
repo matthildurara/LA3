@@ -24,6 +24,7 @@ const Checkout = ({item}) => {
         setDelivery(false);
     };
 
+
     return (
         <>
         <div className='container-bubble'>
