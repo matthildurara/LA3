@@ -10,21 +10,12 @@ import Cart from './components/cart';
 import PreviousOrders from './components/previousOrders';
 import {BrowserRouter as Router, Routes, Route,Link, } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Checkout from './components/checkout';
 import {getBubblesService} from './services/bubbleService';
 
 
 function App() {
-  //  const dispatch = useDispatch();
-  // const [bubbles, setBubbles] = useState({});
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   // setBubbles(await getBubbles());
-  //    dispatch(getBubbles());
-  // },[dispatch]);
-
-
-
+ 
 
   return (
     <Router>
@@ -39,6 +30,8 @@ function App() {
         <Route exact path="/about" element={<About/>}/>
         <Route exact path="/cart" element={<Cart/>}/>
         <Route exact path="/orders/:telephone" element={<PreviousOrders/>}/>
+        <Route exact path='/checkout' element={<Checkout/>} />
+        
 
       </Routes>
     </div>

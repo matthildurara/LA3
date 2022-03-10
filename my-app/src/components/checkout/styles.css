@@ -1,0 +1,14 @@
+.pickup-not{
+    background-color: aqua;
+}
+.pickup{
+    background-color: white;
+}
+.checkout{
+    font-size: 24px;
+}
+.delivery-pickup{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 15px;
+}

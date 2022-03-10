@@ -1,0 +1,12 @@
+.pickupForm{
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+    row-gap: 10px;
+}
+.submit-button{
+    width: 120px;
+}
+/* .pickup-container{
+    display: grid;
+    grid-template-rows: 40px auto;
+} */

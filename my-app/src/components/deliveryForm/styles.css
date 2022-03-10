@@ -1,0 +1,12 @@
+.deliveryForm{
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+    row-gap: 10px;
+}
+.submit{
+    width: 120px;
+}
+/* .delivery-container{
+    display: grid;
+    grid-template-rows: 40px auto;
+} */

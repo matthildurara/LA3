@@ -8,8 +8,17 @@ import { Link } from 'react-router-dom';
 
 
 const Cart = () => {
-    const [phone,setPhone] = useState()
+    const [phone,setPhone] = useState("")
     var cart = getCart();
+
+    const handlePhoneChange = e =>{
+        // const phone = event.target.phone
+        console.log(phone);
+        setPhone(e.target.value)
+        // setPhone(values => ({...values,phone}))
+        // setPhone(phone);
+    }
+    // console.log(phone);
     return(
         <>
         <div>Your cart</div>
@@ -18,11 +27,16 @@ const Cart = () => {
              {Object.values(cart).map((item ,index) => ( 
                  <CartView key={index} item={item} />
                             ))} 
+       <Link to={"/checkout" }  style={{ textDecoration: 'none'}}>
+            <div className='checkout'>Checkout</div>
+            </Link>
         <div>Previous orders</div>
-        <input type='tel' placeholder='Phonenumber' phone={phone} onChange={(phone) => setPhone(phone)} />
-        <Link to={"/orders/" + phone}>
+        <form>
+        <input type='text' placeholder='Phonenumber' value={phone} onChange={handlePhoneChange} />
+        <Link to={`/orders/${phone}`}>
         <div className='previous'>See previous orders</div>
         </Link>
+        </form>
         </>
     )
 }

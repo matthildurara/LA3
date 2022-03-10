@@ -1,13 +1,15 @@
 import React, { useEffect,useState } from 'react';
 import { useSelector} from 'react-redux'; 
-import BundlesView from '../bundlesView'
-import { getBundlesService } from '../../services/bundleService';
+import { useParams } from "react-router-dom";
+
+
 
 
 
 
 const PreviousOrders = () => {
-
+    const { telephone } = useParams();
+    console.log(telephone);
     return (
         <div >
             <h1>Previous Orders</h1>
