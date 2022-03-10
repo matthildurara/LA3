@@ -1,0 +1,26 @@
+.bubble-view{
+    display: grid;
+    grid-template-columns: auto;
+    border: 2px solid #333;
+    padding: 30px;
+    row-gap: 3px;
+    text-align: center;
+    width: 170px;
+    height: 150px;
+    justify-items: center;
+    background-color: rgb(160, 208, 223);
+
+}
+.bubble-view:hover{
+    border: 4px solid #333;
+}
+.bubble-img{
+    width: 120px;
+    height: 120px;
+}
+
+
+.bubble-item{
+    color: black;
+    font-weight: bold;
+}

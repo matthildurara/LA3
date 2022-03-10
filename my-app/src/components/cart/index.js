@@ -4,6 +4,7 @@ import CartView from '../cartView';
 import { Link } from 'react-router-dom';
 
 
+
 // import styles from './styles.css';
 
 
@@ -22,11 +23,12 @@ const Cart = () => {
     return(
         <>
         <div>Your cart</div>
-        <div> hello checking if cart works</div>
         <div onClick={() => clearCart() }>clear cart</div>
+        <div>
              {Object.values(cart).map((item ,index) => ( 
                  <CartView key={index} item={item} />
                             ))} 
+                            </div>
        <Link to={"/checkout" }  style={{ textDecoration: 'none'}}>
             <div className='checkout'>Checkout</div>
             </Link>

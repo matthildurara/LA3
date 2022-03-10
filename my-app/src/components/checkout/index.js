@@ -10,6 +10,7 @@ import PickupForm from '../pickupForm';
 const Checkout = ({item}) => {
     const [delivery,setDelivery] = useState(false);
     const [pickup,setPickup]= useState(true);
+    const [addNewDelivery,setAddDelivery]= useState([]);
     // const [isPickup,setIsPickup] = useState(false);
     // const [pickup,setPickup] = useState(false);
     // const Checkbox = props => (
@@ -22,6 +23,9 @@ const Checkout = ({item}) => {
     const handleChangePickup = () => {
         setPickup(!pickup);
         setDelivery(false);
+    };
+    const addDelivery = (info) => {
+        setAddDelivery([...addNewDelivery,info]);
     };
     
 
@@ -58,7 +62,7 @@ const Checkout = ({item}) => {
                 {pickup?
                 <PickupForm/>
                 :
-                <DeliveryForm/>
+                <DeliveryForm addDelivery={addDelivery}/>
                 }
             </div>
             </>

@@ -8,58 +8,37 @@ const DeliveryForm = () => {
         address: "",
         phone: "",
         city: "",
-        code: "",
+        code: ""
     });
-    // state = {
-    //     customer:{
-    //         name: "",
-    //         address: "",
-    //         phone: "",
-    //         city: "",
-    //         zip: ""
-    //     }
-    // }
 
-
-    // const handleChange = (event) => {
-    //     setContactInfo({ ...contactInfo, [event.target.name]: event.target.value });
-    //   };
     const handleChange = (event) => {
-        setCustomer({...customer,[event.target.name]:event.target.value,} )
-    };
-    // const [inputs,setInputs] = useState({})
+        setCustomer({...customer,
+            [event.target.name]:event.target.value});
+            // console.log(`customer handle change name ${event.target.name}`);
 
-    // const handleChange = (event) => {
-    //     const name = event.target.name;
-    //     const address = event.target.address;
-    //     const city = event.target.city;
-    //     const phone = event.target.phone;
-    //     const code = event.target.code;
-    //    setInputs(values => ({...values,[phone]:{name,address,city,code}}))
-    // }
-    // const handleSubmit = (event) => {
-    // const { name, address, phone, city, code } = this.state.fields;
-    //     this.saveCustomer(name,address,phone,city,code)
-    // };
+            // console.log(`customer handle change ${event.target.value}`);
+    };
 
     const handleSubmit = (event) => {
         // prevents the submit button from refreshing the page
         event.preventDefault();
-        console.log(`customer: ${customer}`);
-      };
+        console.log(`customer: ${customer.name}`);
+        // let customer = {}
+        // customer['name'] = customer.name
+        // customer['phone'] = customer.phone
+        // customer['address'] = customer.address
+        // customer['city'] = city
+        // customer['zip'] = zip
+        // this.setState({
+        //     customer: customer
+        // })
+        localStorage.setItem('customer', JSON.stringify(customer))
+        let cust = localStorage.getItem('customer');
+        // let items = JSON.parse(localStorage.getItem('item'));
+        console.log(cust);
 
-//    const saveCustomer = (name,  address="", phone, city="", code="") =>{
-//         let customer = {}
-//         customer['name'] = name
-//         customer['phone'] = phone
-//         customer['address'] = address
-//         customer['city'] = city
-//         customer['code'] = code
-//         this.setState({
-//             customer: customer
-//         });
-//         localStorage.setItem('customer', JSON.stringify(customer));
-//     };
+      };
+      
 
     return(
         <div className="delivery-container" style={styles}>
@@ -67,37 +46,43 @@ const DeliveryForm = () => {
             <form  onSubmit={handleSubmit} className="deliveryForm" style={styles}>
                 <label> Enter name:
                     <input
+                    type="name"
                     name='name'
-                    value={customer.name}
+                    value={customer.username}
                     onChange={handleChange} />
                 </label>
                 <label> Address:
                     <input
-                    address='address'
+                     type="address"
+                    name='address'
                     value={customer.address} 
                     onChange={handleChange}/>
                 </label>
                 <label> City:
                     <input
-                    city='city'
+                     type="city"
+                    name='city'
                     value={customer.city} 
                     onChange={handleChange}/>
                 </label>
                 <label> Telephone:
                     <input
-                    phone='phone'
+                     type="number"
+                    name='phone'
                     value={customer.phone}
                     onChange={handleChange} />
                 </label>
                 <label> Postal code:
                     <input
-                    type='text'
-                    code='code'
+                    type="postal"
+                    name='code'
                     value={customer.code}
                     onChange={handleChange}/>
                 </label>
-                <input className="submit" type='submit' style={styles}/>
+                <Link to={"/review" }  style={{ textDecoration: 'none'}}>
 
+                <input className="submit" type='submit' style={styles}/>
+                </Link>
             </form>
         </div>
     )
