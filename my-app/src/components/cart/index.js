@@ -33,6 +33,7 @@ const Cart = () => {
         <div>Previous orders</div>
         <form>
         <input type='text' placeholder='Phonenumber' value={phone} onChange={handlePhoneChange} />
+
         <Link to={`/orders/${phone}`}>
         <div className='previous'>See previous orders</div>
         </Link>

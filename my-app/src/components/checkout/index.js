@@ -23,6 +23,7 @@ const Checkout = ({item}) => {
         setPickup(!pickup);
         setDelivery(false);
     };
+    
 
 
     return (
