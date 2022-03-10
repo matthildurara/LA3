@@ -1,3 +1,4 @@
+
 export const getCart = () => {
     let items = JSON.parse(localStorage.getItem('item'));
     return items
@@ -22,3 +23,10 @@ export const clearCart = () => {
     localStorage.setItem('item', JSON.stringify([]));
     console.log(getCart());
 };
+
+
+export const AddBundleToCart = ({items}) => {
+    for (const element of items) {
+        console.log(element);
+    }
+}

@@ -1,9 +1,8 @@
 import React, { useEffect,useState } from 'react';
-import PropTypes from 'prop-types';
-import { getBubbleById } from '../../services/bubbleService';
 import styles from '../bubbleItem/styles.css';
-import { addToCart } from '../../services/cartService';
 import { Link } from 'react-router-dom';
+import { getBubbleById } from '../../services/bubbleService';
+import PropTypes from 'prop-types';
 
 
 const BundlesItem = ({item}) => {
@@ -13,6 +12,7 @@ const BundlesItem = ({item}) => {
             setBubble( await getBubbleById(item));
         })();
     },[item]);
+
     
     return(
         <div className='container-bubble'>
@@ -27,7 +27,6 @@ const BundlesItem = ({item}) => {
         </div>
     )
 }
-
 BundlesItem.propTypes = {
     bubble: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
