@@ -23,23 +23,12 @@ const DeliveryForm = () => {
         // prevents the submit button from refreshing the page
         event.preventDefault();
         console.log(`customer: ${customer.name}`);
-        // let customer = {}
-        // customer['name'] = customer.name
-        // customer['phone'] = customer.phone
-        // customer['address'] = customer.address
-        // customer['city'] = city
-        // customer['zip'] = zip
-        // this.setState({
-        //     customer: customer
-        // })
         localStorage.setItem('customer', JSON.stringify(customer))
         let cust = localStorage.getItem('customer');
-        // let items = JSON.parse(localStorage.getItem('item'));
         console.log(cust);
 
       };
       
-
     return(
         <div className="delivery-container" style={styles}>
             <div>Enter Information</div>
@@ -48,7 +37,7 @@ const DeliveryForm = () => {
                     <input
                     type="name"
                     name='name'
-                    value={customer.username}
+                    value={customer.name}
                     onChange={handleChange} />
                 </label>
                 <label> Address:
@@ -79,7 +68,7 @@ const DeliveryForm = () => {
                     value={customer.code}
                     onChange={handleChange}/>
                 </label>
-                <Link to={"/review" }  style={{ textDecoration: 'none'}}>
+                <Link to="/review" state={{customer: customer}}  style={{ textDecoration: 'none'}}>
 
                 <input className="submit" type='submit' style={styles}/>
                 </Link>

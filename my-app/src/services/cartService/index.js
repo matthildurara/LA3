@@ -1,4 +1,3 @@
-
 export const getCart = () => {
     let items = JSON.parse(localStorage.getItem('item'));
     return items

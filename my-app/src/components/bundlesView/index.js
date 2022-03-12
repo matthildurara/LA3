@@ -26,8 +26,7 @@ const BundlesView = ({item}) => {
             <h2>{name}</h2> 
             <div className='bundle-item'>
                 {items.map(b => <BundlesItem key={b.id} item={b} />) }
-                <div onClick={ () => AddAllItemsToCart() }className="add-to-cart" style={styles}> Add to cart</div>
-
+                <div onClick={ () => AddAllItemsToCart() }className="add-bundle-to-cart" style={styles}> Add to cart</div>
             </div>
 
         </div>

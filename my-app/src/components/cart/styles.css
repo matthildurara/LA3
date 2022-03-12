@@ -1,0 +1,11 @@
+.checkout{
+    color:black;
+    border: solid 2px black;
+    width: 100px;
+    justify-content: center;
+    padding: 5px;
+    float: right;
+}
+.checkout:hover{
+    background-color: lightslategray;
+}

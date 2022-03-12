@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { clearCart,getCart } from '../../services/cartService';
 import CartView from '../cartView';
 import { Link } from 'react-router-dom';
+import styles from './styles.css';
 
 
 
@@ -30,7 +31,7 @@ const Cart = () => {
                             ))} 
                             </div>
        <Link to={"/checkout" }  style={{ textDecoration: 'none'}}>
-            <div className='checkout'>Checkout</div>
+            <div className='checkout' style={styles}>Checkout</div>
             </Link>
         <div>Previous orders</div>
         <form>

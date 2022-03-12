@@ -1,42 +1,54 @@
 import React,{useState} from "react";
 import styles from './styles.css';
+import { Link } from 'react-router-dom';
 
-const DeliveryForm = () => {
-    const [inputs,setInputs] = useState({})
+
+const PickupForm = () => {
+    // const [inputs,setInputs] = useState({})
+    const [customerPickup,setCustomerPickup] = useState({
+        name: "",
+        phone: "",
+    });
 
     const handleChange = (event) => {
-        const name = event.target.name;
-        const phone = event.target.phone;
+        setCustomerPickup({...customerPickup,
+            [event.target.name]:event.target.value});
 
-       setInputs(values => ({...values,[phone]:name}))
-    }
+    };
     const handleSubmit = (event) => {
+        // prevents the submit button from refreshing the page
         event.preventDefault();
-        console.log(inputs);
-        alert(inputs);
-    }
+        console.log(`customer: ${customerPickup.name}`);
+        localStorage.setItem('customerPickup', JSON.stringify(customerPickup))
+        let cust = localStorage.getItem('customerPickup');
+        console.log(cust);
+
+      };
     return(
         <div className="pickup-container" style={styles}>
             <div>Enter Information</div>
             <form className="pickupForm" style={styles} onSubmit={handleSubmit}>
                 <label> Enter name:
                     <input
-                    type='text'
+                    type='name'
                     name='name'
-                    value={inputs.name}
+                    value={customerPickup.name}
                     onChange={handleChange} />
                 </label>
                 <label> Telephone:
                     <input
-                    type='text'
-                    phone='phone'
-                    value={inputs.phone}
+                    type='tel'
+                    name='phone'
+                    value={customerPickup.phone}
                     onChange={handleChange} />
                 </label>
+                <Link to="/review" state={{customer: customerPickup}}   style={{ textDecoration: 'none'}}>
+
                 <input className="submit-button" style={styles} type='submit' />
+                </Link>
             </form>
         </div>
     )
 };
 
-export default DeliveryForm;
+export default PickupForm;

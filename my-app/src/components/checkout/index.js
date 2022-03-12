@@ -5,9 +5,13 @@ import PropTypes from 'prop-types';
 import { addToCart } from '../../services/cartService';
 import DeliveryForm from '../deliveryForm';
 import PickupForm from '../pickupForm';
+// import { useLocation } from "react-router"
 // import {CheckBox} from 'react-native-elements';
 
 const Checkout = ({item}) => {
+    // const form = this.props.location.state;
+    // const { form} = useLocation(); 
+    // console.log(form);
     const [delivery,setDelivery] = useState(false);
     const [pickup,setPickup]= useState(true);
     const [addNewDelivery,setAddDelivery]= useState([]);
@@ -33,7 +37,7 @@ const Checkout = ({item}) => {
     return (
         <>
         <div className='container-bubble'>
-            <div className='checkout' style={styles} >
+            <div className='checkout-site' style={styles} >
                 Checkout
             </div>
             <div className='delivery-pickup' style={styles}>
