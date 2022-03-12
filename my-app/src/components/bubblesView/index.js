@@ -25,12 +25,19 @@ const BubbleView = ({item}) => {
     )
 };
 BubbleView.propTypes = {
+    // The bubble, set as an item
     item: PropTypes.shape({
+        // The individual value of the bubble
         id: PropTypes.number.isRequired,
+        // The name of the bubble
         name: PropTypes.string.isRequired,
+        // The Description for that bubble
         description: PropTypes.string.isRequired,
+        // How much the bubble costs
         price: PropTypes.number.isRequired,
+        // An url link to an image for the bubble
         image: PropTypes.string.isRequired,
     })
 };
+
 export default BubbleView;

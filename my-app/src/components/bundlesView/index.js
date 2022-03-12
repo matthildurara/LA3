@@ -1,7 +1,6 @@
-import React, { useEffect,useState } from 'react';
+import React from 'react';
 import styles from './styles.css';
 import BundlesItem from '../bundlesItem';
-import { AddBundleToCart } from '../../services/cartService';
 import { getBubbleById, } from '../../services/bubbleService';
 import PropTypes from 'prop-types';
 import { addToCart } from '../../services/cartService';
@@ -35,11 +34,17 @@ const BundlesView = ({item}) => {
 
 
 BundlesItem.propTypes = {
+    // The bubble prodouct
     bubble: PropTypes.arrayOf(PropTypes.shape({
+        // The individual value of the bubble
         id: PropTypes.number.isRequired,
+        // The name of the bubble
         name: PropTypes.string.isRequired,
+        // The Description for that bubble
         description: PropTypes.string.isRequired,
+        // How much the bubble costs
         price: PropTypes.number.isRequired,
+        // An url link to an image for the bubble
         image: PropTypes.string.isRequired,
     }))
 };

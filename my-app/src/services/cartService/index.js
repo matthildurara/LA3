@@ -22,10 +22,3 @@ export const clearCart = () => {
     localStorage.setItem('item', JSON.stringify([]));
     console.log(getCart());
 };
-
-
-export const AddBundleToCart = ({items}) => {
-    for (const element of items) {
-        console.log(element);
-    }
-}
