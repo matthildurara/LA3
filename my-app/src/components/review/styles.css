@@ -4,6 +4,10 @@
 }
 .confirm{
     border: 2px solid black;
+    width: 80px;
+    padding: 5px;
+    align-content: center;
+    justify-content: center;
 
 }
 .confirm:hover{

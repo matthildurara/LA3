@@ -4,6 +4,8 @@ import ReviewView from '../reviewView';
 import styles from './styles.css';
 import { useLocation } from "react-router-dom";
 import { saveOrder } from '../../services/orderService';
+import { clearCart } from '../../services/cartService';
+import { Link } from 'react-router-dom';
 
 
 const Review = () => {
@@ -11,29 +13,25 @@ const Review = () => {
     console.log(location);
      const {customer} = location.state;
     console.log(`customer: ${customer}`);
-    const[order,setOrder] = useState({})
-    // console.log(`the form is: ${formin.state}`);
-    // const {name,phone} = (location.state.customerPickup);
-    // console.log(name);
-    //  console.log(`formin: ${location.state}`);
-    // const [customer,setcustomer] = useState({});
-    // let cust = localStorage.getItem('customer');
     var cart = getCart();
-    // setcustomer(cust);
-    // let items = JSON.parse(localStorage.getItem('item'));
-    // console.log(cust);
     const handleConfirm = (cart,customer) => {
-        // const [order,setOrder] = useState({});
         let order = {}
         const phone = customer.phone;
         order['cart'] = cart;
         order['customer'] = customer;
         console.log(order);
         saveOrder(order,phone);
+        clearCart()
     }
     return (
         <div >
             <h1>Review</h1>
+            {customer.address?
+            <div>Delivery</div>
+        : 
+        <div>Pickup</div>
+        }
+                    <br></br>
             <div>{`Name: ${customer.name}`}</div>
             <br></br>
             <div>{`Telephone: ${customer.phone}`}</div>
@@ -51,11 +49,10 @@ const Review = () => {
                  <ReviewView key={index} item={item} />
                             ))} 
                             </div>
+         <Link to={"/confirmation" }  style={{ textDecoration: 'none'}}>
+
             <div onClick={ () => handleConfirm(cart,customer) }className="confirm" > Confirm</div>
-         {/* <div onClick={ () => addToCart(item) }className="remove-cart" style={styles}> Remove from cart</div> */}
-
-
-
+            </Link>
         </div>
     )
 }

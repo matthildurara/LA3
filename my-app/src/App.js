@@ -12,6 +12,7 @@ import {BrowserRouter as Router, Routes, Route,Link, } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Checkout from './components/checkout';
 import Review from './components/review';
+import Confirmation from './components/confirmation';
 import {getBubblesService} from './services/bubbleService';
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/orders/:telephone" element={<PreviousOrders/>}/>
         <Route exact path='/checkout' element={<Checkout/>} />
         <Route exact path='/review' element={<Review/>} />
+        <Route exact path='/confirmation' element={<Confirmation/>} />
         
 
       </Routes>
