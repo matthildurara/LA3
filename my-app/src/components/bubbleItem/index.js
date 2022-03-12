@@ -4,13 +4,11 @@ import { getBubbleById } from '../../services/bubbleService';
 import { useParams } from "react-router-dom";
 import styles from './styles.css';
 import { addToCart } from '../../services/cartService';
-import { useAlert } from 'react-alert';
 
 
 
 
 const BubbleItem = () => {
-    const alert = useAlert()
 
 
     // let { bubbleId } = useParams();
