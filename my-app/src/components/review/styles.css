@@ -2,3 +2,10 @@
     display: grid;
     grid-template-columns: auto auto;
 }
+.confirm{
+    border: 2px solid black;
+
+}
+.confirm:hover{
+    background-color: lightslategray;
+}
