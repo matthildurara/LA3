@@ -10,6 +10,9 @@
     align-items: center;
     align-content: center;
     justify-items: center;
+    width: 40%;
+    margin: auto;
+    text-align: center;
 }
 .add-to-cart:hover{
     background-color: lightslategray;
