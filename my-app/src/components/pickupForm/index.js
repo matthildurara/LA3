@@ -27,6 +27,7 @@ const PickupForm = () => {
             console.log('name is required');
             return false;
         }
+        if(error.length !== ""){return false;}
         return true;
     };
     const handleSubmit = (event) => {
