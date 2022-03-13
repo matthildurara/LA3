@@ -20,16 +20,11 @@ const PickupForm = () => {
     const handleSubmit = (event) => {
         // prevents the submit button from refreshing the page
         event.preventDefault();
-        // const vali = validate(event);
         if(validate()){
-        console.log("inni vali");
-        // console.log(`customer: ${customerPickup.name}`);
         localStorage.setItem('customerPickup', JSON.stringify(customerPickup))
         let cust = localStorage.getItem('customerPickup');
         setConfirm(true);
          }
-
-
       };
       const validate = () => {
         console.log('hallo í validate');
@@ -69,9 +64,6 @@ const PickupForm = () => {
                 <input className="confirm-button" style={styles} type='submit' />
                 {/* </Link> */}
             </form>
-
-
-
                 {error?
                 <div> {error}</div>
                 :
@@ -80,7 +72,7 @@ const PickupForm = () => {
                 {confirm?
                 
                 <Link to="/review" state={{customer: customerPickup}}   style={{ textDecoration: 'none'}}> 
-                <div className="submit-button" style={styles}> See review</div>
+                <div className="submit-button-pick" style={styles}> See review</div>
                                  </Link>
                                  :
                                  <></>

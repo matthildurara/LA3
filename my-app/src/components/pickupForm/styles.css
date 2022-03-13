@@ -3,7 +3,7 @@
     grid-template-rows: auto auto auto auto auto;
     row-gap: 10px;
 }
-.submit-button{
+.submit-button-pick{
     font-family: Papyrus;
     text-align: center; 
     font-size: 35px;

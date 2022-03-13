@@ -11,6 +11,8 @@ const DeliveryForm = () => {
         code: ""
     });
     const [error, setError]  = useState('');
+    const [confirm,setConfirm] = useState(false);
+
     const handleChange = (event) => {
         setCustomer({...customer,
             [event.target.name]:event.target.value});
@@ -18,42 +20,58 @@ const DeliveryForm = () => {
 
             // console.log(`customer handle change ${event.target.value}`);
     };
-    const validate = (event) => {
+    const validate = () => {
         console.log('hallo í validate');
-        if(event.target.name === "") {
+        if(customer.name === "") {
             setError('Name is required');
-            console.log('name is required');
             return false;
         }
-        // if(customerPickup.phone.length !== 7) {
-        //     setError('Phone  is required');
-        //     console.log('name is required');
-        //     return false;
-        // }
-        if(error.length !== ""){return false;}
-        console.log('is true');
-        return true;
+        if(customer.phone.length !== 7) {
+            setError('Phone  is required and needs to be 7 numbers');
+            return false;
+        }
+        if(customer.address === "") {
+            setError('Address is required');
+            return false;
+        }
+        if(customer.city === "") {
+            setError('City is required ');
+            return false;
+        }
+        if(customer.code === "") {
+            setError('Address is required ');
+            return false;
+        }
+            setError('');
+            return true;
+        
     };
     const handleSubmit = (event) => {
         // prevents the submit button from refreshing the page
-        console.log("validation");
         event.preventDefault();
-        if(validate(event)){
+        if(validate()){
         localStorage.setItem('customer', JSON.stringify(customer))
         let cust = localStorage.getItem('customer');
-        // console.log(cust);
+        setConfirm(true);
         }
       };
       
     return(
         <div className="delivery-container" style={styles}>
             <div className="name">Enter Information</div>
-            <form   className="deliveryForm" style={styles}>
+            <form  onSubmit={handleSubmit} className="deliveryForm" style={styles}>
                 <label className="name"> Enter name:
                     <input
                     type="name"
                     name='name'
                     value={customer.name}
+                    onChange={handleChange} />
+                </label>
+                <label className="name"> Telephone:
+                    <input
+                     type="number"
+                    name='phone'
+                    value={customer.phone}
                     onChange={handleChange} />
                 </label>
                 <label className="name"> Address:
@@ -70,25 +88,28 @@ const DeliveryForm = () => {
                     value={customer.city} 
                     onChange={handleChange}/>
                 </label>
-                <label className="name"> Telephone:
-                    <input
-                     type="number"
-                    name='phone'
-                    value={customer.phone}
-                    onChange={handleChange} />
-                </label>
+
                 <label className="name"> Postal code:
                     <input
-                    type="postal"
+                    type="number"
                     name='code'
                     value={customer.code}
                     onChange={handleChange}/>
                 </label>
-                <Link to="/review" state={{customer: customer}}  style={{ textDecoration: 'none'}}>
-
-                <input  onClick={handleSubmit}className="submit" type='submit' style={styles}/>
-                </Link>
+                <input  className="confirm-button" type='submit' style={styles}/>
             </form>
+            {error?
+                <div> {error}</div>
+                :
+                <></>
+                }
+            {confirm?
+            <Link to="/review" state={{customer: customer}}  style={{ textDecoration: 'none'}}>
+             <div  className="submit-button-del" style={styles}>See Review</div>
+            </Link>
+            :
+            <></>
+            }
         </div>
     )
 };
