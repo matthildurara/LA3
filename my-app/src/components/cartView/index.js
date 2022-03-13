@@ -11,7 +11,6 @@ const CartView = ({item}) => {
                 <div className='bubble-item'>{item.name}</div>
                 <div className='bubble-item'>{item.price+'$'}</div>
             </div>
-        <div onClick={ () => addToCart(item) }className="remove-cart" style={styles}> Remove from cart</div>
         </div>
     )
 };
