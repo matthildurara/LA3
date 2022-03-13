@@ -26,16 +26,16 @@ const PickupForm = () => {
       };
     return(
         <div className="pickup-container" style={styles}>
-            <div>Enter Information</div>
+            <div className="enterInfo">Enter Information</div>
             <form className="pickupForm" style={styles} onSubmit={handleSubmit}>
-                <label> Enter name:
+                <label className="name"> Enter name:
                     <input
                     type='name'
                     name='name'
                     value={customerPickup.name}
                     onChange={handleChange} />
                 </label>
-                <label> Telephone:
+                <label className="name"> Telephone:
                     <input
                     type='tel'
                     name='phone'

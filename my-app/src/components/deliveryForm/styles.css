@@ -10,3 +10,7 @@
     display: grid;
     grid-template-rows: 40px auto;
 } */
+
+.name{
+    font-family: Papyrus;
+}

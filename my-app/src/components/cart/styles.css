@@ -1,3 +1,8 @@
+.yourCart{
+    font-family: Papyrus;
+    font-size: 40px;
+    text-align: center;
+}
 .checkout{
     color:black;
     border: solid 2px black;
@@ -5,7 +10,15 @@
     justify-content: center;
     padding: 5px;
     float: right;
+    font-family: Papyrus;
+    font-size: 15px;
+
 }
 .checkout:hover{
     background-color: lightslategray;
+}
+
+.previousOrders{
+    font-family: Papyrus;
+    font-size: 25px;
 }

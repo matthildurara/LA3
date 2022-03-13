@@ -23,8 +23,8 @@ const Cart = () => {
     // console.log(phone);
     return(
         <>
-        <div>Your cart</div>
-        <div onClick={() => clearCart() }>clear cart</div>
+        <div className="yourCart">Your cart</div>
+        {/* <div onClick={() => clearCart() }>clear cart</div> */}
         <div>
              {Object.values(cart).map((item ,index) => ( 
                  <CartView key={index} item={item} />
@@ -33,7 +33,7 @@ const Cart = () => {
        <Link to={"/checkout" }  style={{ textDecoration: 'none'}}>
             <div className='checkout' style={styles}>Checkout</div>
             </Link>
-        <div>Previous orders</div>
+        <div className="previousOrders">Previous orders</div>
         <form>
         <input type='text' placeholder='Phonenumber' value={phone} onChange={handlePhoneChange} />
 

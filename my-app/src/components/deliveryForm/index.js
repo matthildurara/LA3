@@ -31,37 +31,37 @@ const DeliveryForm = () => {
       
     return(
         <div className="delivery-container" style={styles}>
-            <div>Enter Information</div>
+            <div className="name">Enter Information</div>
             <form  onSubmit={handleSubmit} className="deliveryForm" style={styles}>
-                <label> Enter name:
+                <label className="name"> Enter name:
                     <input
                     type="name"
                     name='name'
                     value={customer.name}
                     onChange={handleChange} />
                 </label>
-                <label> Address:
+                <label className="name"> Address:
                     <input
                      type="address"
                     name='address'
                     value={customer.address} 
                     onChange={handleChange}/>
                 </label>
-                <label> City:
+                <label className="name"> City:
                     <input
                      type="city"
                     name='city'
                     value={customer.city} 
                     onChange={handleChange}/>
                 </label>
-                <label> Telephone:
+                <label className="name"> Telephone:
                     <input
                      type="number"
                     name='phone'
                     value={customer.phone}
                     onChange={handleChange} />
                 </label>
-                <label> Postal code:
+                <label className="name"> Postal code:
                     <input
                     type="postal"
                     name='code'
