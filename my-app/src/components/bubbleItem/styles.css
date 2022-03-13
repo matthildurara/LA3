@@ -10,8 +10,10 @@
     align-items: center;
     align-content: center;
     justify-items: center;
-    width: 40%;
-    margin: auto;
+    width: 30%;
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: rgb(160, 208, 223);
     text-align: center;
 }
 .add-to-cart:hover{
@@ -19,6 +21,7 @@
 }
 .bubble-title{
     padding-top: 10px;
+    font-size: x-large;
 }
 .bubble-image{
     width: 160px;
