@@ -10,16 +10,16 @@ import { Link } from 'react-router-dom';
 
 const Review = () => {
     const location = useLocation(); 
-    console.log(location);
+    // console.log(location);
      const {customer} = location.state;
-    console.log(`customer: ${customer}`);
+    // console.log(`customer: ${customer}`);
     var cart = getCart();
     const handleConfirm = (cart,customer) => {
         let order = {}
         const phone = customer.phone;
         order['cart'] = cart;
         order['customer'] = customer;
-        console.log(order);
+        // console.log(order);
         saveOrder(order,phone);
         clearCart()
     }
@@ -51,7 +51,7 @@ const Review = () => {
                             </div>
          <Link to={"/confirmation" }  style={{ textDecoration: 'none'}}>
 
-            <div onClick={ () => handleConfirm(cart,customer) }className="confirm" > Confirm</div>
+            <div onClick={ () => handleConfirm(cart,customer) }className="review-confirm" > Confirm</div>
             </Link>
         </div>
     )

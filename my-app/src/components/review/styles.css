@@ -2,14 +2,21 @@
     display: grid;
     grid-template-columns: auto auto;
 }
-.confirm{
+.review-confirm{
     border: 2px solid black;
-    width: 80px;
+    width: 110px;
     padding: 5px;
     align-content: center;
     justify-content: center;
+    color: black;
+    font-family: Papyrus;
+    text-align: center; 
+    font-size: 30px;
+    float: right;
+    justify-content: space-around;
+    margin-top: 25px;
 
 }
-.confirm:hover{
+.review-confirm:hover{
     background-color: lightslategray;
 }

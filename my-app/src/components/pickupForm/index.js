@@ -10,43 +10,46 @@ const PickupForm = () => {
         phone: "",
     });
     const [error, setError]  = useState('');
-
+    const [confirm,setConfirm] = useState(false);
     const handleChange = (event) => {
         setCustomerPickup({...customerPickup,
             [event.target.name]:event.target.value});
 
     };
-    const validate = (event) => {
-        if(event.target.name === "") {
-            setError('Name is required');
-            console.log('name is required');
-            return false;
-        }
-        if(customerPickup.phone.length !== 7) {
-            setError('Phone  is required');
-            console.log('name is required');
-            return false;
-        }
-        if(error.length !== ""){return false;}
-        return true;
-    };
+
     const handleSubmit = (event) => {
         // prevents the submit button from refreshing the page
         event.preventDefault();
-        if(validate(event) === true){
-
-        console.log(`customer: ${customerPickup.name}`);
+        // const vali = validate(event);
+        if(validate()){
+        console.log("inni vali");
+        // console.log(`customer: ${customerPickup.name}`);
         localStorage.setItem('customerPickup', JSON.stringify(customerPickup))
         let cust = localStorage.getItem('customerPickup');
-        console.log(cust);
-        }
+        setConfirm(true);
+         }
 
 
       };
+      const validate = () => {
+        console.log('hallo í validate');
+        if(customerPickup.name === "") {
+            setError('Name is required');
+            return false;
+        }
+        if(customerPickup.phone.length !== 7) {
+            setError('Phone  is required and needs to be 7 numbes');
+            return false;
+        }
+        else{
+            setError('');
+            return true;
+        }
+    };
     return(
         <div className="pickup-container" style={styles}>
             <div className="enterInfo">Enter Information</div>
-            <form className="pickupForm" style={styles} onSubmit={handleSubmit}>
+            <form  onSubmit={event => handleSubmit(event)} className="pickupForm" style={styles}>
                 <label className="name"> Enter name:
                     <input
                     type='name'
@@ -61,15 +64,26 @@ const PickupForm = () => {
                     value={customerPickup.phone}
                     onChange={handleChange} />
                 </label>
-                <Link to="/review" state={{customer: customerPickup}}   style={{ textDecoration: 'none'}}>
+                {/* <Link to="/review" state={{customer: customerPickup}}   style={{ textDecoration: 'none'}}> */}
 
-                <input className="submit-button" style={styles} type='submit' />
-                </Link>
+                <input className="confirm-button" style={styles} type='submit' />
+                {/* </Link> */}
             </form>
-                {error === ''?
+
+
+
+                {error?
                 <div> {error}</div>
                 :
                 <></>
+                }
+                {confirm?
+                
+                <Link to="/review" state={{customer: customerPickup}}   style={{ textDecoration: 'none'}}> 
+                <div className="submit-button" style={styles}> See review</div>
+                                 </Link>
+                                 :
+                                 <></>
                 }
         </div>
     )

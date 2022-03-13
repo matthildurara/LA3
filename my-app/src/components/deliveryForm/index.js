@@ -10,7 +10,7 @@ const DeliveryForm = () => {
         city: "",
         code: ""
     });
-
+    const [error, setError]  = useState('');
     const handleChange = (event) => {
         setCustomer({...customer,
             [event.target.name]:event.target.value});
@@ -18,21 +18,37 @@ const DeliveryForm = () => {
 
             // console.log(`customer handle change ${event.target.value}`);
     };
-
+    const validate = (event) => {
+        console.log('hallo í validate');
+        if(event.target.name === "") {
+            setError('Name is required');
+            console.log('name is required');
+            return false;
+        }
+        // if(customerPickup.phone.length !== 7) {
+        //     setError('Phone  is required');
+        //     console.log('name is required');
+        //     return false;
+        // }
+        if(error.length !== ""){return false;}
+        console.log('is true');
+        return true;
+    };
     const handleSubmit = (event) => {
         // prevents the submit button from refreshing the page
+        console.log("validation");
         event.preventDefault();
-        console.log(`customer: ${customer.name}`);
+        if(validate(event)){
         localStorage.setItem('customer', JSON.stringify(customer))
         let cust = localStorage.getItem('customer');
-        console.log(cust);
-
+        // console.log(cust);
+        }
       };
       
     return(
         <div className="delivery-container" style={styles}>
             <div className="name">Enter Information</div>
-            <form  onSubmit={handleSubmit} className="deliveryForm" style={styles}>
+            <form   className="deliveryForm" style={styles}>
                 <label className="name"> Enter name:
                     <input
                     type="name"
@@ -70,7 +86,7 @@ const DeliveryForm = () => {
                 </label>
                 <Link to="/review" state={{customer: customer}}  style={{ textDecoration: 'none'}}>
 
-                <input className="submit" type='submit' style={styles}/>
+                <input  onClick={handleSubmit}className="submit" type='submit' style={styles}/>
                 </Link>
             </form>
         </div>

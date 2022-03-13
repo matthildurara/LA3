@@ -4,12 +4,23 @@
     row-gap: 10px;
 }
 .submit-button{
-    width: 120px;
+    font-family: Papyrus;
+    text-align: center; 
+    font-size: 35px;
+    width: 170px;
+    height: 50px;
+    padding-top: 8px;
+    justify-content: space-around;
+    /* margin-top: 250px; */
+    border: 2px solid black;
 }
 /* .pickup-container{
     display: grid;
     grid-template-rows: 40px auto;
 } */
+.confirm-button{
+    width: 120px;
+}
 .enterInfo{
     font-family: Papyrus;
     font-size: 15px;
