@@ -1,7 +1,7 @@
 import styles from './styles.css';
 const Confirmation = () => {
     return (
-        <div className="name"> Order Confirmed</div>
+        <div className="confirm"> Order Confirmed</div>
     )
 
 }
