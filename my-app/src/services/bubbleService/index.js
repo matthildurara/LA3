@@ -1,4 +1,3 @@
-// const ENDPOINT = 'http://127.0.0.1:3500/api/bubbles';
 const ENDPOINT = "http://localhost:3500/api/bubbles";
 
 export const  getBubblesService = async () => {

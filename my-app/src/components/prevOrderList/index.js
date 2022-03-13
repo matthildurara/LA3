@@ -12,9 +12,6 @@ const PrevOrderList = ({item}) => {
     const addItemsToCart = async() => {
         console.log(cart);
         cart.forEach(async item => {
-            console.log(`item in add bundles ${item}`);
-            // let bubble = (await getBubbleById(item));
-            console.log(`bubble item ${item}`);
             addToCart(item);
        });
         
@@ -24,25 +21,15 @@ const PrevOrderList = ({item}) => {
         <div className='prev-view ' style={styles}>
             {Object.values(cart).map(item => (
             <div className="prev-item" key={item.id}>
-            <img className='prev-img' src={item.image}/>
-            <div className='prev-name'>{item.name}</div>
-             <div className='prev-price'>{item.price+'$'}</div> 
-        </div>
+                <img className='prev-img' src={item.image}/>
+                <div className='prev-name'>{item.name}</div>
+                <div className='prev-price'>{item.price+'$'}</div> 
+            </div>
             ))}
         </div>
         <div onClick={ () => addItemsToCart() } className='add-prev'>Add to Cart</div>
-
         </div>
-
     )
 };
-// BubbleView.propTypes = {
-//     item: PropTypes.shape({
-//         id: PropTypes.number.isRequired,
-//         name: PropTypes.string.isRequired,
-//         description: PropTypes.string.isRequired,
-//         price: PropTypes.number.isRequired,
-//         image: PropTypes.string.isRequired,
-//     })
-// };
+
 export default PrevOrderList;

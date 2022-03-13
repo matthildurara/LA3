@@ -6,10 +6,7 @@ import PropTypes from 'prop-types';
 import { addToCart } from '../../services/cartService';
 
 const BundlesView = ({item}) => {
-
     const {name, items } = item;
-    
-    
     const AddAllItemsToCart = async() => {
         console.log(items);
         items.forEach(async item => {
@@ -18,7 +15,6 @@ const BundlesView = ({item}) => {
             console.log(`bubble item ${bubble}`);
             addToCart(bubble);
        });
-        
     }
     return (
         <div className='bundle-view mb-4 box-shadow' style={styles}>
@@ -27,7 +23,6 @@ const BundlesView = ({item}) => {
                 {items.map(b => <BundlesItem key={b.id} item={b} />) }
                 <div onClick={ () => AddAllItemsToCart() }className="add-bundle-to-cart" style={styles}> Add to cart</div>
             </div>
-
         </div>
     );
 }

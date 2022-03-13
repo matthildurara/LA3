@@ -14,10 +14,6 @@
     margin-top: 25px;
     border: 2px solid black;
 }
-/* .delivery-container{
-    display: grid;
-    grid-template-rows: 40px auto;
-} */
 .confirm-button{
     width: 120px;
 }

@@ -5,9 +5,6 @@ import { getBubblesService } from '../../services/bubbleService';
 import styles from './styles.css';
 import { Link } from 'react-router-dom';
 
-
-
-
 const Home = () => {
     const [bubbles,setBubbles] = useState({});
     useEffect(() => {
@@ -16,15 +13,12 @@ const Home = () => {
         })();
     },[]);
 
-    console.log(bubbles);
-
     return (
         <div className='container' style={styles}>
             <h1>Welcome to Bubblify</h1>
             <Link to={"/bubbles"} style={{ textDecoration: 'none'}}>
                 <div className='btn bubbles' style={styles}>Bubbles</div>
             </Link>
-
         </div>
     )
 }

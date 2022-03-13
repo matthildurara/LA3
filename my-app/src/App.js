@@ -35,8 +35,6 @@ function App() {
         <Route exact path='/checkout' element={<Checkout/>} />
         <Route exact path='/review' element={<Review/>} />
         <Route exact path='/confirmation' element={<Confirmation/>} />
-        
-
       </Routes>
     </div>
     </Router>

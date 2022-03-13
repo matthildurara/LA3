@@ -1,9 +1,6 @@
 import React from 'react';
 import styles from './styles.css';
 
-// import styles from './styles.css';
-
-
 const About = () => {
     return(
         <div className='container'>
@@ -14,7 +11,6 @@ const About = () => {
                 <h1 className='contactUs'>Contact us</h1>
                 <p><strong>Phone:</strong> 8888888</p>
                 <p><strong>Email:</strong> bubbles@bubblify.com</p>
-
             </div>
         </div>
     )

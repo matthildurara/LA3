@@ -6,8 +6,6 @@
     padding: 20px;
 }
 .bubble-item{
-    /* display: grid;
-    grid-template-rows: auto; */
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -17,7 +15,6 @@
     background-color: lightslategray;
 }
 .bubble-title{
-    /* font-size: 28px; */
     padding-top: 10px;
 }
 .bubble-image{

@@ -2,18 +2,12 @@
     border: 2px solid black;
     padding: 30px;
     text-align: center;
-    /* width: 350px; */
     align-items: center;
     justify-content: center;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-
 }
 .bundle-view.hover{
     border: 5px solid black;
 }
-
 .add-bundle-to-cart{
     border: 2px solid black;
     width: 80px;

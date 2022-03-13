@@ -7,13 +7,12 @@ import { addToCart } from '../../services/cartService';
 const ReviewView = ({item}) => {
     return (
         <div className='container-bubble'>
-        <div className='bubble-view ' style={styles}>
+            <div className='bubble-view ' style={styles}>
                 <img className='bubble-img' src={item.image}/>
                 <div className='bubble-item'>{item.name}</div>
                 <div className='bubble-item'>{item.price+'$'}</div>
+            </div>
         </div>
-        </div>
-
     )
 };
 ReviewView.propTypes = {

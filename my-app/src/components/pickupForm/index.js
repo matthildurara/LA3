@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 
 const PickupForm = () => {
-    // const [inputs,setInputs] = useState({})
     const [customerPickup,setCustomerPickup] = useState({
         name: "",
         phone: "",
@@ -14,19 +13,17 @@ const PickupForm = () => {
     const handleChange = (event) => {
         setCustomerPickup({...customerPickup,
             [event.target.name]:event.target.value});
-
     };
-
     const handleSubmit = (event) => {
         // prevents the submit button from refreshing the page
         event.preventDefault();
         if(validate()){
-        localStorage.setItem('customerPickup', JSON.stringify(customerPickup))
-        let cust = localStorage.getItem('customerPickup');
-        setConfirm(true);
-         }
+            localStorage.setItem('customerPickup', JSON.stringify(customerPickup))
+            let cust = localStorage.getItem('customerPickup');
+            setConfirm(true);
+        }
       };
-      const validate = () => {
+    const validate = () => {
         console.log('hallo í validate');
         if(customerPickup.name === "") {
             setError('Name is required');
@@ -36,10 +33,9 @@ const PickupForm = () => {
             setError('Phone  is required and needs to be 7 numbes');
             return false;
         }
-        else{
-            setError('');
-            return true;
-        }
+        setError('');
+        return true;
+        
     };
     return(
         <div className="pickup-container" style={styles}>
@@ -59,23 +55,19 @@ const PickupForm = () => {
                     value={customerPickup.phone}
                     onChange={handleChange} />
                 </label>
-                {/* <Link to="/review" state={{customer: customerPickup}}   style={{ textDecoration: 'none'}}> */}
-
                 <input className="confirm-button" style={styles} type='submit' />
-                {/* </Link> */}
             </form>
                 {error?
-                <div> {error}</div>
-                :
-                <></>
+                    <div> {error}</div>
+                    :
+                    <></>
                 }
                 {confirm?
-                
-                <Link to="/review" state={{customer: customerPickup}}   style={{ textDecoration: 'none'}}> 
-                <div className="submit-button-pick" style={styles}> See review</div>
-                                 </Link>
-                                 :
-                                 <></>
+                    <Link to="/review" state={{customer: customerPickup}}   style={{ textDecoration: 'none'}}> 
+                        <div className="submit-button-pick" style={styles}> See review</div>
+                    </Link>
+                    :
+                    <></>
                 }
         </div>
     )

@@ -16,9 +16,6 @@ const DeliveryForm = () => {
     const handleChange = (event) => {
         setCustomer({...customer,
             [event.target.name]:event.target.value});
-            // console.log(`customer handle change name ${event.target.name}`);
-
-            // console.log(`customer handle change ${event.target.value}`);
     };
     const validate = () => {
         console.log('hallo í validate');
@@ -44,15 +41,14 @@ const DeliveryForm = () => {
         }
             setError('');
             return true;
-        
     };
     const handleSubmit = (event) => {
         // prevents the submit button from refreshing the page
         event.preventDefault();
         if(validate()){
-        localStorage.setItem('customer', JSON.stringify(customer))
-        let cust = localStorage.getItem('customer');
-        setConfirm(true);
+            localStorage.setItem('customer', JSON.stringify(customer))
+            let cust = localStorage.getItem('customer');
+            setConfirm(true);
         }
       };
       
@@ -88,7 +84,6 @@ const DeliveryForm = () => {
                     value={customer.city} 
                     onChange={handleChange}/>
                 </label>
-
                 <label className="name"> Postal code:
                     <input
                     type="number"
@@ -104,11 +99,11 @@ const DeliveryForm = () => {
                 <></>
                 }
             {confirm?
-            <Link to="/review" state={{customer: customer}}  style={{ textDecoration: 'none'}}>
-             <div  className="submit-button-del" style={styles}>See Review</div>
-            </Link>
-            :
-            <></>
+                <Link to="/review" state={{customer: customer}}  style={{ textDecoration: 'none'}}>
+                    <div  className="submit-button-del" style={styles}>See Review</div>
+                </Link>
+                :
+                <></>
             }
         </div>
     )

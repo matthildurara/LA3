@@ -4,9 +4,6 @@ import BubbleView from '../bubblesView'
 import { getBubblesService } from '../../services/bubbleService';
 import styles from './styles.css';
 
-
-
-
 const BubblesList = () => {
     const [bubbles,setBubbles] = useState({});
     useEffect(() => {
@@ -21,9 +18,8 @@ const BubblesList = () => {
             <h1 className='bubble-title' style={styles}>Bubbles</h1>
             <div className="home-bubbles" style={styles}>
                 {Object.values(bubbles).map(item => ( 
-                     
-                        <BubbleView key={item.id} item={item} />
-                        ))}
+                    <BubbleView key={item.id} item={item} />
+                    ))}
             </div>
         </div>
     )

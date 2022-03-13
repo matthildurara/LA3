@@ -2,10 +2,7 @@
     display: grid;
     grid-template-columns: 33% 33% 33%;
     row-gap: 15px;
-
     justify-items: center;
-    
-
 }
 .bubble-title{
     display: flex;
@@ -15,8 +12,6 @@
     align-content: center;
 }
 .container{
-    /* display: flex; */
-    /* grid-template-rows: 10% auto; */
     padding: 10px;
 
 }

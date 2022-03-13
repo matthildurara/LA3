@@ -12,13 +12,28 @@
     float: right;
     font-family: Papyrus;
     font-size: 15px;
-
 }
 .checkout:hover{
     background-color: lightslategray;
 }
-
 .previousOrders{
     font-family: Papyrus;
     font-size: 25px;
+}
+.total{
+    font-size: 20px;
+    font-family: Papyrus;
+    float: right;
+    margin: 10px;
+}
+.previous{
+    font-family: Papyrus;
+    border: solid black 2px;
+    color: black;
+    margin-top: 10px;
+    padding: 3px;
+    width: 150px;
+}
+.previous:hover{
+    background-color: lightslategray;
 }

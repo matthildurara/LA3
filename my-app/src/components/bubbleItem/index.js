@@ -5,13 +5,7 @@ import { useParams } from "react-router-dom";
 import styles from './styles.css';
 import { addToCart } from '../../services/cartService';
 
-
-
-
 const BubbleItem = () => {
-
-
-    // let { bubbleId } = useParams();
     const { bubbleId } = useParams();
     const [bubble,setBubble] = useState({});
     useEffect(() => {
@@ -23,8 +17,6 @@ const BubbleItem = () => {
 
     const addCart = (bubble) =>{
         addToCart(bubble);
-        alert('Bubble added to cart');
-
     }
     return(
         <div className="bubble-item" style={styles}>
@@ -33,9 +25,7 @@ const BubbleItem = () => {
             <div className='bubble-description'>{bubble.description}</div>
             <div className='bubble-price'>{bubble.price + '$'}</div>
             <button onClick={addCart(bubble) }className="add-to-cart" style={styles}> Add to cart</button>
-
         </div>
-        
         )
     }
 

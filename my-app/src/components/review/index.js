@@ -10,28 +10,26 @@ import { Link } from 'react-router-dom';
 
 const Review = () => {
     const location = useLocation(); 
-    // console.log(location);
-     const {customer} = location.state;
-    // console.log(`customer: ${customer}`);
+    const {customer} = location.state;
     var cart = getCart();
     const handleConfirm = (cart,customer) => {
         let order = {}
         const phone = customer.phone;
         order['cart'] = cart;
         order['customer'] = customer;
-        // console.log(order);
         saveOrder(order,phone);
         clearCart()
     }
+
     return (
         <div >
             <h1>Review</h1>
             {customer.address?
             <div>Delivery</div>
-        : 
-        <div>Pickup</div>
-        }
-                    <br></br>
+            : 
+            <div>Pickup</div>
+            }
+            <br></br>
             <div>{`Name: ${customer.name}`}</div>
             <br></br>
             <div>{`Telephone: ${customer.phone}`}</div>
@@ -49,9 +47,8 @@ const Review = () => {
                  <ReviewView key={index} item={item} />
                             ))} 
                             </div>
-         <Link to={"/confirmation" }  style={{ textDecoration: 'none'}}>
-
-            <div onClick={ () => handleConfirm(cart,customer) }className="review-confirm" > Confirm</div>
+            <Link to={"/confirmation" }  style={{ textDecoration: 'none'}}>
+                <div onClick={ () => handleConfirm(cart,customer) }className="review-confirm" > Confirm</div>
             </Link>
         </div>
     )
