@@ -9,19 +9,37 @@ const PickupForm = () => {
         name: "",
         phone: "",
     });
+    const [error, setError]  = useState('');
 
     const handleChange = (event) => {
         setCustomerPickup({...customerPickup,
             [event.target.name]:event.target.value});
 
     };
+    const validate = (event) => {
+        if(event.target.name === "") {
+            setError('Name is required');
+            console.log('name is required');
+            return false;
+        }
+        if(customerPickup.phone.length !== 7) {
+            setError('Phone  is required');
+            console.log('name is required');
+            return false;
+        }
+        return true;
+    };
     const handleSubmit = (event) => {
         // prevents the submit button from refreshing the page
         event.preventDefault();
+        if(validate(event) === true){
+
         console.log(`customer: ${customerPickup.name}`);
         localStorage.setItem('customerPickup', JSON.stringify(customerPickup))
         let cust = localStorage.getItem('customerPickup');
         console.log(cust);
+        }
+
 
       };
     return(
@@ -37,7 +55,7 @@ const PickupForm = () => {
                 </label>
                 <label className="name"> Telephone:
                     <input
-                    type='tel'
+                    type='number'
                     name='phone'
                     value={customerPickup.phone}
                     onChange={handleChange} />
@@ -47,6 +65,11 @@ const PickupForm = () => {
                 <input className="submit-button" style={styles} type='submit' />
                 </Link>
             </form>
+                {error === ''?
+                <div> {error}</div>
+                :
+                <></>
+                }
         </div>
     )
 };
