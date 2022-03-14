@@ -19,7 +19,7 @@ const BubbleItem = () => {
         addToCart(bubble);
     }
     return(
-        <div className="bubble-item" style={styles}>
+        <div className="single-bubble-item" style={styles}>
             <div className='bubble-title' style={styles}>{bubble.name}</div>
             <img className='bubbe-img' style={styles} src={bubble.image} alt='bubble-img'></img>
             <div className='bubble-description'>{bubble.description}</div>
